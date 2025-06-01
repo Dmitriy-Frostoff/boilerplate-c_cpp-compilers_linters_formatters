@@ -1,4 +1,4 @@
-# boilerplate_c_cpp-compilers_linters_formatters
+# boilerplate-c_cpp-compilers_linters_formatters
 
 It's an boilerplate for usage of `C/C++` and it's `tools` in a future project. Check out the docs below to be in an `actual tune`!
 

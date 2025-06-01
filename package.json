@@ -1,5 +1,5 @@
 {
-  "name": "boilerplate_c_cpp-compilers_linters_formatters",
+  "name": "boilerplate-c_cpp-compilers_linters_formatters",
   "version": "0.1.0",
   "description": "It's an boilerplate for usage of c/c++ compilers, linters, formatters (the settings) in a future project. Check out the docs below to be in actual tune!",
   "main": "main.cpp",
@@ -35,14 +35,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dmitriy-Frostoff/boilerplate_c_cpp-compilers_linters_formatters.git"
+    "url": "git+https://github.com/Dmitriy-Frostoff/boilerplate-c_cpp-compilers_linters_formatters.git"
   },
   "author": "Dmitriy Frostoff",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Dmitriy-Frostoff/boilerplate_c_cpp-compilers_linters_formatters/issues"
+    "url": "https://github.com/Dmitriy-Frostoff/boilerplate-c_cpp-compilers_linters_formatters/issues"
   },
-  "homepage": "https://github.com/Dmitriy-Frostoff/boilerplate_c_cpp-compilers_linters_formatters#readme",
+  "homepage": "https://github.com/Dmitriy-Frostoff/boilerplate-c_cpp-compilers_linters_formatters#readme",
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
