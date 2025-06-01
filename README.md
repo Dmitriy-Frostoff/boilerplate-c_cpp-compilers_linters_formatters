@@ -95,7 +95,7 @@ the two main settings are:
 ---
 
 **note!**  
-**clang** and **clang++** compilers won't work standalone!!! They're **strongly required libs!!!**, so that's why flag `--target=x86_64-w64-windows-gnu` is must be nested (for actula `Windows` especially)! Otherwise one'll have got the compilation error like this:
+**clang** and **clang++** compilers won't work standalone!!! They're **strongly required libs!!!**, so that's why flag `--target=x86_64-w64-windows-gnu` is must be nested (for actual `Windows` especially)! Otherwise one'll have got the compilation error like this:
 
 ```bash
 $ clang -std=c17 ./task.c -o task,exe
@@ -151,7 +151,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 ```
 
 in the `./CMakeLists.txt`.
-Also it'll be usefull to
 
 **note:** Check the paths to `msys64` folder (e.g. `C/Tools/msys64/ucrt64`)!
 [`clang-tidy`](https://clang.llvm.org/extra/clang-tidy/) is a `Linter` for `C` and `C++`;
