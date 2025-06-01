@@ -1,0 +1,32 @@
+If:
+  PathMatch: .*\.(cpp|cc|cxx)
+CompileFlags:
+  Compiler: C:\\Tools\\LLVM\\bin\\clang++.exe
+  Add:
+    [
+      --target=x86_64-w64-windows-gnu,
+      -std=c++20,
+      -Wall,
+      '-I',
+      'C:/Tools/msys64/ucrt64/include',
+    ]
+  CompilationDatabase: ./build/compile_commands.json
+Index:
+  StandardLibrary: Yes
+
+---
+If:
+  PathMatch: .*\.(c|h)
+CompileFlags:
+  Compiler: C:\\Tools\\LLVM\\bin\\clang.exe
+  Add:
+    [
+      --target=x86_64-w64-windows-gnu,
+      -std=c17,
+      -Wall,
+      '-I',
+      'C:/Tools/msys64/ucrt64/include',
+    ]
+  CompilationDatabase: ./build/compile_commands.json
+Index:
+  StandardLibrary: Yes

@@ -1,0 +1,6 @@
+Checks: "clang-diagnostic-*,clang-analyzer-*,modernize-*,readability-*,cppcoreguidelines-*,performance-*"
+CheckOptions:
+  - key: modernize-use-auto.MinTypeNameLength
+    value: 5
+  - key: cppcoreguidelines-pro-type-member-init.IgnoreArrays
+    value: true
