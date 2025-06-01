@@ -1,0 +1,57 @@
+{
+  "name": "boilerplate_c_cpp-compilers_linters_formatters",
+  "version": "0.1.0",
+  "description": "It's an boilerplate for usage of c/c++ compilers, linters, formatters (the settings) in a future project. Check out the docs below to be in actual tune!",
+  "main": "main.cpp",
+  "type": "module",
+  "scripts": {
+    "lint": "npx eslint ./src --ignore-path ./configs/eslint/.eslintignore --config ./configs/eslint/.eslintrc.cjs",
+    "lint:fix": "npx eslint ./src --ignore-path ./configs/eslint/.eslintignore --config ./configs/eslint/.eslintrc.cjs --fix",
+    "prettier": "npx prettier ./src --check --ignore-path ./configs/prettier/.prettierignore --config ./configs/prettier/prettier.config.js",
+    "prettier:fix": "npx prettier ./src --write --ignore-path ./configs/prettier/.prettierignore --config ./configs/prettier/prettier.config.js",
+    "format": "npm run prettier:fix && npm run lint:fix",
+    "prepare": "husky",
+    "update:packages": "node ./configs/execa/main.js"
+  },
+  "keywords": [
+    "eslint",
+    "prettier",
+    "husky",
+    "commitlint",
+    "pre-commit",
+    "commit-msg",
+    "execa",
+    "c",
+    "c++",
+    "g++",
+    "gcc",
+    "gdb",
+    "clang",
+    "clang++",
+    "LLVM",
+    "clang-tidy",
+    "clang-format",
+    "clangd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dmitriy-Frostoff/boilerplate_c_cpp-compilers_linters_formatters.git"
+  },
+  "author": "Dmitriy Frostoff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dmitriy-Frostoff/boilerplate_c_cpp-compilers_linters_formatters/issues"
+  },
+  "homepage": "https://github.com/Dmitriy-Frostoff/boilerplate_c_cpp-compilers_linters_formatters#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "execa": "^9.5.2",
+    "husky": "^9.1.7",
+    "prettier": "^3.4.2"
+  }
+}
