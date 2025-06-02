@@ -1,7 +1,7 @@
+---
 If:
   PathMatch: .*\.(cpp|cc|cxx)
 CompileFlags:
-  Compiler: C:\\Tools\\LLVM\\bin\\clang++.exe
   Add:
     [
       --target=x86_64-w64-windows-gnu,
@@ -11,9 +11,25 @@ CompileFlags:
       'C:/Tools/msys64/ucrt64/include',
     ]
   CompilationDatabase: ./build/compile_commands.json
+  Compiler: C:\\Tools\\LLVM\\bin\\clang++.exe
 Index:
+  Background: Build
   StandardLibrary: Yes
-
+Diagnostics:
+  UnusedIncludes: Strict
+Completion:
+  AllScopes: Yes
+  ArgumentLists: FullPlaceholders
+  HeaderInsertion: IWYU
+  CodePatterns: All
+InlayHints:
+  BlockEnd: false
+  Designators: true
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+  DefaultArguments: false
+  TypeNameLimit: 24
 ---
 If:
   PathMatch: .*\.(c|h)
@@ -29,4 +45,20 @@ CompileFlags:
     ]
   CompilationDatabase: ./build/compile_commands.json
 Index:
+  Background: Build
   StandardLibrary: Yes
+Diagnostics:
+  UnusedIncludes: Strict
+Completion:
+  AllScopes: Yes
+  ArgumentLists: FullPlaceholders
+  HeaderInsertion: IWYU
+  CodePatterns: All
+InlayHints:
+  BlockEnd: false
+  Designators: true
+  Enabled: true
+  ParameterNames: true
+  DeducedTypes: true
+  DefaultArguments: false
+  TypeNameLimit: 24

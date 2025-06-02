@@ -50,7 +50,7 @@
     "--pretty",
     "--background-index",
     "--clang-tidy",
-    "--header-insertion=never",
+    "--header-insertion=iwyu",
     "--completion-style=detailed",
     "--enable-config"
   ],

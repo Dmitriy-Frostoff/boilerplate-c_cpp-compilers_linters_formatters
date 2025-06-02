@@ -130,12 +130,12 @@ then add following lines to the `./.vscode/settings.json`
   },
   "clangd.path": "C:\\Tools\\LLVM\\bin\\clangd.exe", // path to Clangd, required
   "clangd.arguments": [
-    "--log=verbose",
-    "--pretty",
-    "--background-index",
-    "--clang-tidy",
-    "--header-insertion=never",
-    "--completion-style=detailed",
+    "--log=verbose",  // logs of extension work
+    "--pretty", // logs formatting
+    "--background-index", // for indexing files
+    "--clang-tidy", // use clang-tidy in real time
+    "--header-insertion=iwyu", // include headers automatically (or set 'never')
+    "--completion-style=detailed",  // autocomplete
     "--enable-config" // required for .clangd config usage
   ],
   "C_Cpp.intelliSenseEngine": "disabled", // disable C/C++
@@ -164,7 +164,7 @@ Do not nest them to the `./configs/`... (**untidy**, don't like that kind).
 ---
 
 - `./.clang-format` - contains rules for formatting the `C` and `C++` files' code. Feel free to change it as your wish (currently it's a custom K&R style, based on `LLVM` style, but with `IndentWidth: 2` instead of `IndentWidth: 4`).
-- `./.clang-tidy` - config for code lintering ([Clang-Tidy docs](https://clang.llvm.org/extra/clang-tidy/)).
+- `./.clang-tidy` - config for code lintering ([Clang-Tidy docs](https://clang.llvm.org/extra/clang-tidy/). Currently set particularly to `Mozilla` checks with AirBnB style param naming).
 - `./.clangd` - config for Clangd VSCode extenion ([clangd teach your editor C++](https://clangd.llvm.org/installation))
   and don't forget about it's settings in the `./.vscode/settings.json`.
 
