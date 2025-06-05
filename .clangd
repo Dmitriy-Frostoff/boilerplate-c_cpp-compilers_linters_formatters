@@ -26,7 +26,7 @@ InlayHints:
   BlockEnd: false
   Designators: true
   Enabled: true
-  ParameterNames: true
+  ParameterNames: false
   DeducedTypes: true
   DefaultArguments: false
   TypeNameLimit: 24
@@ -58,7 +58,7 @@ InlayHints:
   BlockEnd: false
   Designators: true
   Enabled: true
-  ParameterNames: true
+  ParameterNames: false
   DeducedTypes: true
   DefaultArguments: false
   TypeNameLimit: 24
