@@ -24,7 +24,7 @@ Completion:
   CodePatterns: All
 InlayHints:
   BlockEnd: false
-  Designators: true
+  Designators: false
   Enabled: true
   ParameterNames: false
   DeducedTypes: true
@@ -56,7 +56,7 @@ Completion:
   CodePatterns: All
 InlayHints:
   BlockEnd: false
-  Designators: true
+  Designators: false
   Enabled: true
   ParameterNames: false
   DeducedTypes: true
