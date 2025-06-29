@@ -375,10 +375,50 @@ then just run `node update_all_packages.mjs` from the `E:/Code learning` and che
 
 ### Integration with [`Connections`](#Connections) links:
 
-To integrate the boilerplate do the following steps (**note**: copy the project structure as is!!!):
+To integrate the boilerplate do the following steps (**note**: copy the project structure as is!!!):  
+@note all the next pathes are **cwd** relative.  
+It's assumed that `LLVM` (with `clang-tidy` and `clang-format`)
+is installed in your system and added to the `path environment` => `C:/Tools/LLVM/bin` and compilers are installed:
 
-- add the following lines to the `package.json`:
-  TODO!
+- `clang`, `clang++` (and `path environment` => `C:/Tools/LLVM/bin`) (must have for `clangd` real time linter, won't work otherwise)
+  and `gcc`, `g++`, `gdb` (and `path environment` => `C:/Tools/msys64/ucrt64/bin`)
+
+- copy:  
+  `.clang-format`  
+  `.clang-tidy`  
+  `.clangd`  
+  `.editorconfig`  
+  `.gitignore`  
+  `build`  
+  `.vscode`
+
+- check out files and pathes to the compilers / debuggers to suit your system and folders layout!!!  
+  (currently => `C:/Tools/`):  
+  `.vscode/c_cpp_properties.json`:
+  - `configurations...{intelliSenseMode...}`, `configurations...{compilerPath...}`, `configurations...{compileCommands...}`, `configurations...{cStandard...}`, `configurations...{cppStandard...}`
+
+  `.vscode/settings.json`:
+  - `"[c]"`, `"[cpp]"`, `"clangd.path"`, `"clangd.arguments"`, `"C_Cpp.default.compilerPath"`
+
+  `.vscode/launch.json`:
+  - `"configurations"...{ "miDebuggerPath" }`
+
+  use [clangd](https://marketplace.visualstudio.com/items?itemName=llvm-vs-code-extensions.vscode-clangd) and [Doxygen Documentation Generator](https://marketplace.visualstudio.com/items?itemName=cschlosser.doxdocgen) extensions for `VSCode`.
+
+  **optionally** (`TS/JS` linting / formatting, `Husky` for commit messages checking (to suit to `git - flow`)):  
+  @note all the next pathes are **cwd** relative.
+
+  copy:
+  - `configs`, `.husky`
+
+  install the npm packages:
+
+  ```bash
+  npm i -D @commitlint/cli @commitlint/config-conventional eslint-config-airbnb-base eslint-config-prettier eslint eslint-plugin-import execa husky prettier
+  ```
+
+copy from `.vscode/settings.json` all the data till `"[c]"...`
+use [`format-code-action`](https://marketplace.visualstudio.com/items?itemName=rohit-gohri.format-code-action) extension for `VSCode` (real - time linting and formatting on save).
 
 **With the new packages releases, the ones above can turn to pumpkin, so check'em out with official docs!!!**
 
@@ -472,4 +512,4 @@ To integrate the boilerplate do the following steps (**note**: copy the project 
 
 - [to be done!]();
 
-#### done: June 01, 2025
+#### done: June 29, 2025
