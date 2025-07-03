@@ -79,6 +79,19 @@ Another way is to use [Code Runner VSCode extenion](https://marketplace.visualst
  }
 ```
 
+or to link all the `*.c` or `*.cpp` files (glob patterns) into one `main` file  
+(**@note!** do not run `code runner` on files differ from `main.(c|cpp)` !  
+This params will work only for **flat files structure**!!!  
+otherwise link files manually with complier option `-I`
+(e.g. `gcc -g -std=c17 -Iinclude *.c -o main`, where `include` (or whatever set folders) is a folder with `*.h` files (means, `hey, compiler, look also for *.h files in the include folder!`))
+
+```json
+ "code-runner.executorMap": {
+    "c": "cd $dirWithoutTrailingSlash && clang --target=x86_64-w64-windows-gnu -g -std=c17 *.c -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+    "cpp": "cd $dirWithoutTrailingSlash && clang++ --target=x86_64-w64-windows-gnu -g -std=c++20 *.cpp -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+ }
+```
+
 about **$fileName**, **$fileNameWithoutExt**, **$dirWithoutTrailingSlash** read the `Code Runner` docs.
 
 **Debugging**  
@@ -512,4 +525,4 @@ use [`format-code-action`](https://marketplace.visualstudio.com/items?itemName=r
 
 - [to be done!]();
 
-#### done: June 29, 2025
+#### done: July 03, 2025
