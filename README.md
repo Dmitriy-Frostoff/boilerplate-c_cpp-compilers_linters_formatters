@@ -74,8 +74,8 @@ Another way is to use [Code Runner VSCode extenion](https://marketplace.visualst
 
 ```json
  "code-runner.executorMap": {
-    "c": "cd $dirWithoutTrailingSlash && clang --target=x86_64-w64-windows-gnu -g -std=c17 $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
-    "cpp": "cd $dirWithoutTrailingSlash && clang++ --target=x86_64-w64-windows-gnu -g -std=c++20 $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+    "c": "cd $dirWithoutTrailingSlash && clang --target=x86_64-w64-windows-gnu -g -std=c23 $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+    "cpp": "cd $dirWithoutTrailingSlash && clang++ --target=x86_64-w64-windows-gnu -g -std=c++23 $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
  }
 ```
 
@@ -83,12 +83,12 @@ or to link all the `*.c` or `*.cpp` files (glob patterns) into one `main` file
 (**@note!** do not run `code runner` on files differ from `main.(c|cpp)` !  
 This params will work only for **flat files structure**!!!  
 otherwise link files manually with complier option `-I`
-(e.g. `gcc -g -std=c17 -Iinclude *.c -o main`, where `include` (or whatever set folders) is a folder with `*.h` files (means, `hey, compiler, look also for *.h files in the include folder!`))
+(e.g. `gcc -g -std=c23 -Iinclude *.c -o main`, where `include` (or whatever set folders) is a folder with `*.h` files (means, `hey, compiler, look also for *.h files in the include folder!`))
 
 ```json
  "code-runner.executorMap": {
-    "c": "cd $dirWithoutTrailingSlash && clang --target=x86_64-w64-windows-gnu -g -std=c17 *.c -o $fileNameWithoutExt && ./$fileNameWithoutExt",
-    "cpp": "cd $dirWithoutTrailingSlash && clang++ --target=x86_64-w64-windows-gnu -g -std=c++20 *.cpp -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+    "c": "cd $dirWithoutTrailingSlash && clang --target=x86_64-w64-windows-gnu -g -std=c23 *.c -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+    "cpp": "cd $dirWithoutTrailingSlash && clang++ --target=x86_64-w64-windows-gnu -g -std=c++23 *.cpp -o $fileNameWithoutExt && ./$fileNameWithoutExt",
  }
 ```
 
@@ -111,7 +111,7 @@ the two main settings are:
 **clang** and **clang++** compilers won't work standalone!!! They're **strongly required libs!!!**, so that's why flag `--target=x86_64-w64-windows-gnu` is must be nested (for actual `Windows` especially)! Otherwise one'll have got the compilation error like this:
 
 ```bash
-$ clang -std=c17 ./task.c -o task,exe
+$ clang -std=c23 ./task.c -o task,exe
 clang: warning: unable to find a Visual Studio installation; try running Clang from a developer command prompt [-Wmsvc-not-found]
 task.c:2:10: fatal error: 'stdio.h' file not found
     2 | #include <stdio.h>
