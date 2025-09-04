@@ -186,7 +186,7 @@ Do not nest them to the `./configs/`... (**untidy**, don't like that kind).
 
 ### Alternative setup (currently) for Windows 10x64:
 
-One can ease the developer process just replacing a bunch of `Windows` specific installation tools (e.g. `Git for Windows`, `Python`, external: `LLVM` + tools, `CMake`, `Ninja`, even `node.js`!) to `msys2` usage (with `ucrt64` terminal prefered).
+One can ease the developer process just replacing a bunch of `Windows` specific installation tools (e.g. `Git for Windows`, `Python`, external: `LLVM` + tools, `CMake`, `Ninja`, even `node.js`!) to `msys2` usage (with `ucrt64` terminal preferred).
 The `msys2` with `pacman` will be the magic wand to rule all the developer tools and will ease their update process! It will produce the `Linux` portal inside your `Windows 10x64`.
 
 #### Steps to achieve (assume that msys2 with pacman is already installed):
@@ -202,8 +202,8 @@ The `msys2` with `pacman` will be the magic wand to rule all the developer tools
 
 > [!NOTE]  
 > Don't forget to check (and to add if not done yet) that `PATH (system variable)` (as top as possible in the list)
-> contains full path to the installed `msys2` folder with prefered terminal
-> (e,g. `ucrt64` currently prefered or change / add folders you wish (e.g. `clang64` that path will be
+> contains full path to the installed `msys2` folder with preferred terminal
+> (e,g. `ucrt64` currently preferred or change / add folders you wish (e.g. `clang64` that path will be
 > e.g. `C:\Tools\msys64\clang64\bin`))  
 > with `bin` folder at the end!. E.g. (just below the `%SYSTEMROOT%\System32\OpenSSH\`):  
 > `C:\Tools\msys64\usr\bin`  
@@ -361,7 +361,7 @@ pacman -S zip
 - set up `msys2` `Git` similar to `Git-for-Windows` (for now deal with `msys64/home/your_user_name` folder i.e. `%HOME%`)
   - copy `usefull_chunks/for git/git-prompt.sh` to the `home` directory of the `msys2`
     (e.g. `C:/Tools/msys64/home/Dmitriy Frostoff` or from the `ucrt64` terminal to `~` (i.e. `%HOME%`))
-  - copy fields start from the `usefull_chunks/for git/.bashrc` (from the comment `# Bootstrap git-prompt.sh`) to the end of your `.bashrc` file
+  - copy fields start from the `usefull_chunks/for git/.bashrc` (start from the comment `# Bootstrap git-prompt.sh`) to the end of your `.bashrc` file
   - copy necessary fields from `usefull_chunks/for git/.gitconfig` to your `.gitconfig` (check the comments inside!)
 
 - learn [how to add `ucrt64 shell terminal` to context menu](https://gist.github.com/hollowmaster1496/617769d51d39cf4cc8f6427d6f3b4369 'github gist link') (i.e.`right-click`) and check out the `usefull_chunks/Win10 x64 ucrt64 terminal shell/msys2_ucrt64_shell.reg` as i did as for example))
@@ -408,7 +408,7 @@ import path from 'path';
  * Write log file with date and `No errors logged.` inner.
  * If `update-error.log` doesn't exist one will be created beside the script
  *
- * @param {string} pathToLogFile - path (absolute is prefered) to the log file
+ * @param {string} pathToLogFile - path (absolute is preferred) to the log file
  * @param {string} logMessage - log message for writing into the log file
  *
  * @returns {Promise<void>}
@@ -431,7 +431,7 @@ async function writeSuccessLogFile(pathToLogFile, logMessage) {
  * Write log file with date and error message inside.
  * If `update-error.log` doesn't exist one will be created beside the script
  *
- * @param {string} pathToLogFile - path (absolute is prefered) to the log file
+ * @param {string} pathToLogFile - path (absolute is preferred) to the log file
  * @param {Error | ExecaError} error - object Error
  *
  * @returns {Promise<void>}
