@@ -5,13 +5,13 @@ CompileFlags:
   Add:
     [
       --target=x86_64-w64-windows-gnu,
-      -std=c++20,
+      -std=c++23,
       -Wall,
       '-I',
       'C:/Tools/msys64/ucrt64/include',
     ]
   CompilationDatabase: ./build/compile_commands.json
-  Compiler: C:\\Tools\\LLVM\\bin\\clang++.exe
+  Compiler: C:\\Tools\\msys64\\ucrt64\\bin\\clang++.exe
 Index:
   Background: Build
   StandardLibrary: Yes
@@ -34,11 +34,11 @@ InlayHints:
 If:
   PathMatch: .*\.(c|h)
 CompileFlags:
-  Compiler: C:\\Tools\\LLVM\\bin\\clang.exe
+  Compiler: C:\\Tools\\msys64\\ucrt64\\bin\\clang.exe
   Add:
     [
       --target=x86_64-w64-windows-gnu,
-      -std=c17,
+      -std=c23,
       -Wall,
       '-I',
       'C:/Tools/msys64/ucrt64/include',

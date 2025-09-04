@@ -6,7 +6,7 @@
     {
       "name": "clang",
       "intelliSenseMode": "windows-clang-x64",
-      "compilerPath": "C:\\Tools\\LLVM\\bin\\Clang.exe",
+      "compilerPath": "C:\\Tools\\msys64\\ucrt64\\bin\\Clang.exe",
       "compileCommands": "${workspaceFolder}/build/compile_commands.json",
       "cStandard": "c23",
       "browse": {
@@ -16,7 +16,7 @@
     {
       "name": "clang++",
       "intelliSenseMode": "windows-clang-x64",
-      "compilerPath": "C:\\Tools\\LLVM\\bin\\Clang++.exe",
+      "compilerPath": "C:\\Tools\\msys64\\ucrt64\\bin\\Clang++.exe",
       "compileCommands": "${workspaceFolder}/build/compile_commands.json",
       "cppStandard": "c++23",
       "browse": {

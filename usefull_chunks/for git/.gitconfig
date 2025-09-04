@@ -1,0 +1,18 @@
+[user]
+  # !set_up_user_name via `git config --global user.name`
+	name =
+  # !set_up_user_email via `git config --global user.email`
+	email =
+[rerere]
+  # for resolving branch conflicts read more about "git rerere"
+	enabled = true
+[core]
+  # path to your editor
+	editor = 'C:\\Program Files\\VSCode\\Code.exe' --wait
+[safe]
+	directory = *
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	status = auto

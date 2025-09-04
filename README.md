@@ -47,6 +47,7 @@ Also this pathes **must be added** to the **PATH** environment ([How to: Add Too
 - `.vscode/settings.json` - settings for appropraite work of `C/C++ core` in the project at first and then (optionally) the `ESlint` and `Prettier` VSCode extensions in a project (with a help of `Format Code Action` extension). There're settings and scripts for a usage of the configs (and ignore) files in the project (i.e. links to ones config files) and there's `end-of-line(EOF)` property that is set to `LF` (i.e. `"files.eol": "\n"`);
 - `.vscode/launch.json` - settings for `C/C++` code debugging;
 - `configs/` - the folder includes config and ignore files for: `ESlint`, `Prettier`, `Commitlint` packages. Currently about ignore files: `node_modules` and a few more folders are ignored (check `.gitignore` file);
+- `usefull_chunks` - (optional!) the folder with usefull files and settings for `git` (`msys2` version) and for adding quick access to the `ucrt64 terminal` from `right-click` anywhere and examples of custom `bash scripts` for compiling `.exe` of your project (**@note:** cwd will be is from where `bash script` was executed!).
 - `.editorconfig` - the project common settings (as for now it's as in RSSchool recommended check the [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) for more.  
   **notice**: `EditorConfig` IDE extension required!);
 - `build/` - built binaries of the project (**note**: `build/compile_commands.json` are strongly required for linter!);
@@ -182,6 +183,188 @@ Do not nest them to the `./configs/`... (**untidy**, don't like that kind).
   and don't forget about it's settings in the `./.vscode/settings.json`.
 
 `Clangd` works **only with clang, clang++ compilers** (with `--target=x86_64-w64-windows-gnu`), no other way. Check the settings and params at `./.clangd` and via official docs. Also check in the `clangd settings`: `Clangd: Path` => path to the clangd.exe (e.g. `C:\\Tools\\LLVM\\bin\\clangd.exe`) and don't forget to update the extension's databases (or enable `Clangd: Check Updates` in the `Clangd` extension settings).
+
+### Alternative setup (currently) for Windows 10x64:
+
+One can ease the developer process just replacing a bunch of `Windows` specific installation tools (e.g. `Git for Windows`, `Python`, external: `LLVM` + tools, `CMake`, `Ninja`, even `node.js`!) to `msys2` usage (with `ucrt64` terminal prefered).
+The `msys2` with `pacman` will be the magic wand to rule all the developer tools and will ease their update process! It will produce the `Linux` portal inside your `Windows 10x64`.
+
+#### Steps to achieve (assume that msys2 with pacman is already installed):
+
+[Learn more about msys2: Pacman](https://www.msys2.org/docs/pacman/);  
+[Learn more about Pacman: docs](https://wiki.archlinux.org/title/Pacman);  
+[Learn more about Pacman: cheatsheet](https://devhints.io/pacman);  
+[Learn more about msys2: Git ](https://www.msys2.org/docs/git/);  
+[Learn more about msys2: Python ](https://www.msys2.org/docs/python/);  
+[Learn more about msys2: CMake ](https://www.msys2.org/docs/cmake/);
+
+---
+
+> [!NOTE]  
+> Don't forget to check (and to add if not done yet) that `PATH (system variable)` (as top as possible in the list)
+> contains full path to the installed `msys2` folder with prefered terminal
+> (e,g. `ucrt64` currently prefered or change / add folders you wish (e.g. `clang64` that path will be
+> e.g. `C:\Tools\msys64\clang64\bin`))  
+> with `bin` folder at the end!. E.g. (just below the `%SYSTEMROOT%\System32\OpenSSH\`):  
+> `C:\Tools\msys64\usr\bin`  
+> `C:\Tools\msys64\ucrt64\bin`  
+> (with optional `C:\Program Files\VSCode` (check your VSCode folder path) at bottom of the list  
+> to call `code .` from anywhere)
+
+- update the installed tools
+
+```bash
+pacman -Syu
+```
+
+- search for tool to download and to get info
+
+```bash
+pacman -Ss "tool_name or part_of_name"
+```
+
+- install package
+
+```bash
+pacman -S "tool_name or part_of_name"
+```
+
+- install the desired version of the package
+
+```bash
+pacman -U "packagefile_tar.zst"
+```
+
+- remove package (**!preferred command**)
+
+```bash
+pacman -R "tool_name or part_of_name"
+```
+
+or (**!use with caution, can harm other relative packages!!!**)
+
+```bash
+pacman -Rsc "tool_name or part_of_name"
+```
+
+- install `clang` (`clang environment` including `clang` and `clang++` compilers )
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-clang
+```
+
+- install `LLVM`
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-llvm
+```
+
+- install `LLVM extra tools (clangd etc)`
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-clang-tools-extra
+```
+
+- install `CMake`
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-cmake
+```
+
+- install `Ninja`
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-ninja
+```
+
+---
+
+**optional. install for your wish**
+
+- install `Git`
+
+```bash
+pacman -S git
+```
+
+- install `Git LFS`
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-git-lfs
+```
+
+- install `Node.js with npm`
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-nodejs
+```
+
+- install `npm for Node.js (only for reasons!)`
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-npm
+```
+
+- install `Python`  
+  (**@note:** `msys2`, similar to `Linux` environment, already contains `python`, but better to sure)
+
+```bash
+pacman -S python
+```
+
+- install `pip for Python`
+
+```bash
+pacman -S python-pip
+```
+
+**optional for Pacman. install for your wish**
+
+- install `midnight commander (mc)`
+
+```bash
+pacman -S mc
+```
+
+- install `wget`
+
+```bash
+pacman -S wget
+```
+
+- install `tree`
+
+```bash
+pacman -S tree
+```
+
+- install `curl`
+
+```bash
+pacman -S curl
+```
+
+- install `unzip`
+
+```bash
+pacman -S unzip
+```
+
+- install `zip`
+
+```bash
+pacman -S zip
+```
+
+**optional. Additional steps**
+
+- set up `msys2` `Git` similar to `Git-for-Windows` (for now deal with `msys64/home/your_user_name` folder i.e. `%HOME%`)
+  - copy `usefull_chunks/for git/git-prompt.sh` to the `home` directory of the `msys2`
+    (e.g. `C:/Tools/msys64/home/Dmitriy Frostoff` or from the `ucrt64` terminal to `~` (i.e. `%HOME%`))
+  - copy fields start from the `usefull_chunks/for git/.bashrc` (from the comment `# Bootstrap git-prompt.sh`) to the end of your `.bashrc` file
+  - copy necessary fields from `usefull_chunks/for git/.gitconfig` to your `.gitconfig` (check the comments inside!)
+
+- learn [how to add `ucrt64 shell terminal` to context menu](https://gist.github.com/hollowmaster1496/617769d51d39cf4cc8f6427d6f3b4369 'github gist link') (i.e.`right-click`) and check out the `usefull_chunks/Win10 x64 ucrt64 terminal shell/msys2_ucrt64_shell.reg` as i did as for example))
 
 ### Execa usage:
 
@@ -469,6 +652,19 @@ use [`format-code-action`](https://marketplace.visualstudio.com/items?itemName=r
 - [Clang-Format for Visual Studio Code](https://github.com/xaverh/vscode-clang-format);
 - [using Clang in windows 10 for C/C++](https://stackoverflow.com/a/63914740/20705648);
 
+#### MSYS2, Pacman and relative:
+
+- [MSYS2 official documentation](https://www.msys2.org/);
+- [MSYS2 official GitHub repo](https://github.com/msys2/msys2.github.io);
+- [Learn more about MSYS2: Package Management](https://www.msys2.org/docs/package-management/);
+- [Learn more about MSYS2: Pacman](https://www.msys2.org/docs/pacman/);
+- [Learn more about Pacman: docs](https://wiki.archlinux.org/title/Pacman);
+- [Learn more about Pacman: cheatsheet](https://devhints.io/pacman);
+- [Learn more about MSYS2: Git ](https://www.msys2.org/docs/git/);
+- [Learn more about MSYS2: Python ](https://www.msys2.org/docs/python/);
+- [Learn more about MSYS2: CMake ](https://www.msys2.org/docs/cmake/);
+- [Open MSYS2 terminal here (mingw-w64) from right-click menu](https://gist.github.com/hollowmaster1496/617769d51d39cf4cc8f6427d6f3b4369);
+
 #### VSCode usage' links:
 
 - [Using Prettier and ESLint to automate formatting and fixing JavaScript by Rob O'Leary (Feb 11, 2022)](https://blog.logrocket.com/using-prettier-eslint-automate-formatting-fixing-javascript/);
@@ -525,4 +721,4 @@ use [`format-code-action`](https://marketplace.visualstudio.com/items?itemName=r
 
 - [to be done!]();
 
-#### done: July 03, 2025
+#### done: September 09, 2025
