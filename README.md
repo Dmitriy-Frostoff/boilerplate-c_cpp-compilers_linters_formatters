@@ -665,9 +665,9 @@ then just run `node update_all_packages.mjs` from the `E:/Code learning` and che
 To integrate the boilerplate do the following steps (**note**: copy the project structure as is!!!):  
 @note all the next pathes are **cwd** relative.  
 It's assumed that `LLVM` (with `clang-tidy` and `clang-format`)
-is installed in your system and added to the `path environment` => `C:/Tools/LLVM/bin` and compilers are installed:
+is installed in your system and added to the `path environment` => e.g. `C:/Tools/LLVM/bin` or `C:/Tools/msys64/ucrt64/bin` and compilers are installed:
 
-- `clang`, `clang++` (and `path environment` => `C:/Tools/LLVM/bin`) (must have for `clangd` real time linter, won't work otherwise)
+- `clang`, `clang++` (and `path environment` => e.g. `C:/Tools/LLVM/bin` or `C:/Tools/msys64/ucrt64/bin`) (must have for `clangd` real time linter, won't work otherwise)
   and `gcc`, `g++`, `gdb` (and `path environment` => `C:/Tools/msys64/ucrt64/bin`)
 
 - copy:  
