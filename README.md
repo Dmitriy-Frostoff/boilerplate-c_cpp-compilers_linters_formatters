@@ -213,6 +213,12 @@ pacman -S mingw-w64-ucrt-x86_64-llvm
 pacman -S mingw-w64-ucrt-x86_64-clang-tools-extra
 ```
 
+- install `lld`
+
+```bash
+pacman -S mingw-w64-ucrt-x86_64-lld
+```
+
 - install `CMake`
 
 ```bash
