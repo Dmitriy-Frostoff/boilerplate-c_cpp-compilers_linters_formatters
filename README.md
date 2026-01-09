@@ -401,6 +401,10 @@ it's required to be installed at your PC (and added to the `PATH environment var
 
 then add following lines to the `./.vscode/settings.json`
 
+> [!NOTE]  
+> check the paths below to suite yours!  
+> e.g. for `msys2` usage, path to the `clangd` is `C:/Tools/msys64/ucrt64/bin/clangd`
+
 ```json
 ...
  "[c]": {
