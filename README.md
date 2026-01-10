@@ -810,6 +810,8 @@ use [`format-code-action`](https://marketplace.visualstudio.com/items?itemName=r
 
 #### Connections:
 
-- [to be done!]();
+- [boilerplate-c_cpp-cmake-ninja-make](https://github.com/Dmitriy-Frostoff/boilerplate-c_cpp-cmake-ninja-make);
+
+- [boilerplate-c_cpp-testing-gtest](https://github.com/Dmitriy-Frostoff/boilerplate-c_cpp-testing-gtest);
 
 #### done: September 09, 2025
