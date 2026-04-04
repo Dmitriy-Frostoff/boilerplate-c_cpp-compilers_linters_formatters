@@ -52,6 +52,6 @@
     "eslint-plugin-import": "^2.32.0",
     "execa": "^9.6.1",
     "husky": "^9.1.7",
-    "prettier": "^3.7.4"
+    "prettier": "^3.8.1"
   }
 }
